@@ -88,3 +88,5 @@ If you're running this in a local environment with a proxy or modified `claudeAp
 ## Data Attribution
 
 COVID-19 data provided by [disease.sh](https://disease.sh) — Open Disease Data API.
+
+updated
