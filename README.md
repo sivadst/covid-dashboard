@@ -1,92 +1,124 @@
 # COVID Analytics Dashboard
 
-A production-grade React data science dashboard with live COVID-19 data, interactive charts, trend analysis, ML forecasting, and AI-powered insights.
+🚀 **Live Demo:** [View Dashboard](https://covid-dashboard-v21.vercel.app/)
 
-## Stack
+A production-grade React data science dashboard with live COVID-19 data, interactive charts, trend analysis, machine learning forecasting, and AI-powered insights.
 
-- **React 18** — UI framework
-- **Recharts** — charting library
-- **disease.sh** — free public COVID-19 API (no key needed)
-- **Claude API** — AI-powered analysis summaries
+---
 
-## Project Structure
+## 🧠 Tech Stack
+
+* **React 18** — UI framework
+* **Recharts** — data visualization
+* **disease.sh API** — real-time COVID data
+* **Claude API** — AI-powered analysis
+
+---
+
+## 📂 Project Structure
 
 ```
 src/
 ├── api/
-│   ├── covidApi.js        # disease.sh API layer
-│   └── claudeApi.js       # Anthropic Claude API
+│   ├── covidApi.js
+│   └── claudeApi.js
 ├── components/
-│   ├── AISummary.jsx      # Claude-powered text analysis
-│   ├── BarChart.jsx       # Recharts bar chart wrapper
-│   ├── ChartCard.jsx      # Card shell for charts
-│   ├── CountryTable.jsx   # Ranked country data table
-│   ├── ForecastChart.jsx  # Forecast UI + controls
-│   ├── InsightsPanel.jsx  # KPI insight cells
-│   ├── LineChart.jsx      # Recharts line chart wrapper
-│   ├── MetricCard.jsx     # Summary stat cards
-│   ├── Sidebar.jsx        # Nav + country selector
-│   └── Topbar.jsx         # Header bar
+│   ├── AISummary.jsx
+│   ├── BarChart.jsx
+│   ├── ChartCard.jsx
+│   ├── CountryTable.jsx
+│   ├── ForecastChart.jsx
+│   ├── InsightsPanel.jsx
+│   ├── LineChart.jsx
+│   ├── MetricCard.jsx
+│   ├── Sidebar.jsx
+│   └── Topbar.jsx
 ├── hooks/
-│   ├── useAISummary.js    # Claude API state hook
-│   ├── useCovidData.js    # Data fetching hook
-│   └── useForecast.js     # Linear regression forecast hook
+│   ├── useAISummary.js
+│   ├── useCovidData.js
+│   └── useForecast.js
 ├── pages/
-│   ├── CountriesPage.jsx  # Country rankings view
-│   ├── ForecastPage.jsx   # Forecast model view
-│   ├── OverviewPage.jsx   # Main dashboard view
-│   └── TrendsPage.jsx     # Trend analysis view
+│   ├── CountriesPage.jsx
+│   ├── ForecastPage.jsx
+│   ├── OverviewPage.jsx
+│   └── TrendsPage.jsx
 ├── styles/
-│   └── global.css         # Full design system
+│   └── global.css
 ├── utils/
-│   └── formatters.js      # Number/date formatting utils
-├── App.jsx                # Root component + routing
-└── index.js               # Entry point
+│   └── formatters.js
+├── App.jsx
+└── index.js
 ```
 
-## Getting Started
+---
+
+## ⚙️ Getting Started
 
 ```bash
 npm install
 npm start
 ```
 
-Opens at **http://localhost:3000**
+App runs on: **http://localhost:3000**
 
-## Features
+---
 
-| Feature | Details |
-|---|---|
-| Live data | disease.sh — no API key required |
-| 23 countries | Worldwide + 22 country filters |
-| 4 dashboard tabs | Overview, Trends, Forecast, Countries |
-| 6 metric cards | Cases, deaths, recovered, active, CFR, 7-day avg |
-| Key Insights panel | Growth rate, CFR, recovery rate, peak detection |
-| Trend charts | 60-day dual series (cases vs deaths) |
-| Weekly buckets | 7-day aggregated bar chart |
-| Cumulative view | 90-day total trajectory |
-| Forecast model | OLS linear regression, 7 or 14-day window |
-| Confidence band | ±15% around point estimate |
-| Country table | Top 15 with CFR, cases/million, today's delta |
-| AI analysis | Claude-powered 80-word epidemiological summary |
+## 🚀 Features
 
-## AI Analysis (Optional)
+* 🌍 Live COVID data (no API key required)
+* 🌐 23 country filters (including global view)
+* 📊 Interactive charts (cases, deaths, trends)
+* 📈 4 dashboard views:
 
-The "Generate Analysis" button in the Insights panel calls the Anthropic API. The app works fully without it — the button simply won't return a response if the API is not reachable from the browser.
+  * Overview
+  * Trends
+  * Forecast
+  * Countries
+* 🧮 6 key metrics:
 
-If you're running this in a local environment with a proxy or modified `claudeApi.js` to include your API key:
+  * Cases, Deaths, Recovered, Active, CFR, 7-day average
+* 🧠 AI-powered insights (Claude integration)
+* 📉 ML Forecasting (Linear Regression model)
+* 📅 Time-series analysis (daily + cumulative trends)
+
+---
+
+## 🤖 AI Analysis (Optional)
+
+The **"Generate Analysis"** button uses Claude API.
+
+To enable locally:
 
 ```js
-// src/api/claudeApi.js — add to headers:
-'x-api-key': 'YOUR_KEY_HERE',
+// src/api/claudeApi.js
+'x-api-key': 'YOUR_API_KEY',
 'anthropic-version': '2023-06-01',
 'anthropic-dangerous-direct-browser-access': 'true',
 ```
 
-> Note: For production, route Claude API calls through a backend server to protect your API key.
+⚠️ For production, use a backend proxy to protect your API key.
 
-## Data Attribution
+---
 
-COVID-19 data provided by [disease.sh](https://disease.sh) — Open Disease Data API.
+## 📊 Data Source
 
-updated
+COVID-19 data provided by:
+👉 https://disease.sh
+
+
+---
+
+## 💡 Future Improvements
+
+* Backend integration for secure AI usage
+* Advanced forecasting models (ARIMA / LSTM)
+* User personalization & saved views
+* Mobile responsiveness improvements
+
+---
+
+## ⭐ Final Note
+
+This project demonstrates full-stack thinking — combining **data science, machine learning, and frontend engineering** into a real-world deployed application.
+
+---
