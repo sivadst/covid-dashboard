@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useCovidData } from './hooks/useCovidData';
-import { toDailySeries, toCumulativeSeries, last30 } from './utils/formatters';
-
+import { toDailySeries, toCumulativeSeries } from './utils/formatters';
 import Topbar from './components/Topbar';
 import Sidebar from './components/Sidebar';
 

@@ -8,13 +8,11 @@ export default function OverviewPage({ summary, dailyCases, dailyLabels, dailyDe
   if (!summary) return null;
 
   const deathRate = summary.cases ? (summary.deaths / summary.cases) * 100 : 0;
-  const recoveryRate = summary.cases ? (summary.recovered / summary.cases) * 100 : 0;
   const avg7 = dailyCases.length
     ? Math.round(dailyCases.slice(-7).reduce((a, b) => a + b, 0) / 7)
     : 0;
 
   const caseSeries = dailyLabels.map((x, i) => ({ x, y: dailyCases[i] }));
-  const deathSeries = dailyLabels.map((x, i) => ({ x, y: dailyDeaths[i] }));
 
   return (
     <>
